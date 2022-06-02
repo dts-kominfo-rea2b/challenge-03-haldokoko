@@ -26,7 +26,11 @@ const listBelanjaan = (dataBelanjaan) => {
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
 const totalBelanjaan = (dataBelanjaan) => {
-    return dataBelanjaan.map((item) => item.harga * item.kuantitas);
+    let totalharga = 0;
+    for (let i = 0; i <dataBelanjaan.length; i++) {
+        totalharga += dataBelanjaan[i].harga * dataBelanjaan[i].kuantitas;
+    }
+    return totalharga;
 };
 
 // ! JANGAN DIMODIFIKASI
@@ -34,9 +38,9 @@ const main = () => {
     console.log("Selamat datang customer");
 
     console.log("Belanjaan Anda adalah:");
-    console.log(listBelanjaan ? .(dataBelanjaan) ? .join("\n"));
+    console.log(listBelanjaan?.(dataBelanjaan)?.join("\n"));
     console.log(
-        "\nTotal Belanjaan Anda adalah Rp. " + totalBelanjaan ? .(dataBelanjaan)
+        "\nTotal Belanjaan Anda adalah Rp. "+ totalBelanjaan?.(dataBelanjaan)
     );
 };
 
